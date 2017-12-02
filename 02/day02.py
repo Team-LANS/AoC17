@@ -11,15 +11,8 @@ def div(l):
     for i, v in enumerate(l):
         for j, w in enumerate(l):
             if i != j:
-                if gcd(v, w) > 1:
-                    return gcd(v, w)
-
-def gcd(a,b):
-    print(a, ", ", b)
-    while b:
-        a, b = b, a % b
-    print(a)
-    return a
+                if not v % w:
+                    return v // w
 
 
 print(sum([div(row) for row in m]))
